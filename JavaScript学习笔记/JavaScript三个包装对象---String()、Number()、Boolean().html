@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript三个包装对象--&gt;String()、Number()、Boolean()</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">JavaScript三个包装对象--&gt;String()、Number()、Boolean()</h1>
+        <div class="show-content">
+          <h4>包装对象</h4><p>有人说，JavaScript语言“一切皆是对象”，数组和函数本质上都是对象，就连三个原始类型的值（数值、字符串、布尔值），在一定条件下，也会转成对象，也就是原始类型的“包装对象”。</p><p>“包装对象”，就是分别与数值、字符串、布尔值相对应的Number、String、Boolean三个原生对象。这三个原生对象可以把原始类型的值变成（包装成）对象。据原始类型的值,生成(通过new)的对象，与原始值的类型不同。这用typeof运算符就可以看出来，类型变成Object。</p><p>目的：</p><p>JavaScript设计包装对象的最大目的，首先是使得JavaScript的“对象”涵盖所有的值。其次，使得原始类型的值可以方便地调用特定方法。</p><p>用途：</p><p>1.当三个对象作为构造函数使用（带有new）时，可以将原始类型的值转为对象；</p><p>2.当作为普通函数使用时（不带有new），可以将任意类型的值，转为原始类型的值。</p><p><b>包装对象实例的方法</b></p><p>凡是包装对象实例都可以使用Object对象提供的原生方法，主要是valueOf方法和toString方法。</p><p>1.valueOf() 返回包装对象实例对应的原始类型的值。</p><p>2.toString() 返回实例对应的字符串形式。</p><p><b>原始类型的自动转换</b></p><p>当原始值当成对象调用对应方法和属性时，其实是JavaScript引擎会自动将原始类型的值转为包装对象（临时对象），通过通过这个转成的包装对象调用各种对应的方法和参数,不过，临时对象在使用后就立刻销毁，回归成原始值。</p><p>这个临时对象是只读的，无法修改。所以，字符串无法添加新属性。</p><p>在调用结束后，临时对象会自动销毁，下一次调用字符串的属性时，实际是调用一个新生成的对象，而不是上一次调用时生成的那个对象，所以如果前面有添加新的属性，也是取不到赋值在上一个对象的属性。如果想要为字符串添加属性，只有在它的原型对象String.prototype上定义</p><p><b>包装对象上自定义方法</b></p><p>可以在对应的原型上添加自定义方法和属性，供原始类型的值直接调用。</p><hr><h1><b>Number对象</b></h1><p>即数值对应的包装对象，</p><p>Number()可以作为构造函数使用，也可以作为工具函数使用。当作为构造函数使用，返回对应数值的对象，当作为工具函数时，它可以将任何类型的值转为数值。</p><p><b>Number对象的属性</b></p><p>Number.POSITIVE_INFINITY：正的无限，指向Infinity。</p><p>Number.NEGATIVE_INFINITY：负的无限，指向-Infinity。</p><p>Number.NaN：表示非数值，指向NaN。</p><p>Number.MAX_VALUE：表示最大的正数，相应的，最小的负数为-Number.MAX_VALUE。</p><p>Number.MIN_VALUE：表示最小的正数，相应的，最接近0的负数为-Number.MIN_VALUE。</p><p>Number.MAX_SAFE_INTEGER：表示能够精确表示的最大整数，即9007199254740991。</p><p>Number.MIN_SAFE_INTEGER：表示能够精确表示的最小整数，即-9007199254740991。</p><p><b>Number 对象实例的方法</b></p><p>Number.prototype.toString() 将一个数值转为字符串形式</p><p>Number.prototype.toFixed() 将一个数转为指定位数的小数，返回这个小数对应的字符串。</p><p>Number.prototype.toExponential() 将一个数转为科学计数法形式。</p><p>Number.prototype.toPrecision() 将一个数转为指定位数的有效数字。</p><hr><h1><b>String对象</b></h1><p>new String("abc");用来生成字符串的包装对象。相当于String{0:"a",1:"b",2:"c",length:3},实际上，字符串的包装对象是一个类似数组的对象;</p><p>原始值字符串并没有属性和方法,因为他们不是对象。但原始值可以使用 JavaScript 的属性和方法，是因为 JavaScript 在执行方法和属性时可以把原始值当作对象。可以通过 new 关键字将字符串定义为一个String对象： var firstName = new String("John")，但一遍建议不要创建 String 对象。它会拖慢执行速度，并可能产生其他副作用，所以一般直接直面量var str = "abc"</p><p>当不作为构造函数时，String()可以将任意类型的值转为字符串。</p><p><b>String对象提供的静态方法（即定义在对象本身）</b></p><p><b>String.fromCharCode()<br></b></p><p>方法的参数是一系列Unicode码点，根据这些码点返回对应的字符串</p><p><b>实例对象的属性和方法</b></p><p><b>length属性</b></p><p>length属性返回字符串的长度。</p><p><b>charAt()</b></p><p>返回指定位置的字符，参数是从0开始编号的位置。</p><p><b>charCodeAt()</b></p><p>返回给定位置字符的Unicode码点（十进制表示）。</p><p><b>concat()</b></p><p>用于连接两个字符串，返回一个新字符串，不改变原字符串。</p><p><b>slice()</b></p><p>用于从原字符串截取子字符串并返回，不改变原字符串。</p><p>当有两个参数时：第一个表示开始位，第二个是结束位（不含该位置）</p><p>当只有一个参数时：则表示从该位开始，截取到最后并返回。</p><p>当不传参时：相当于是截取了整个字符串，可以理解为复制了一个一样的值</p><p>如果参数是负值：表示从倒数位置。</p><p>如果第一个参数大于第二个参数：如slice(3,1)，方法返回一个空字符串。</p><p><b>substring()</b></p><p>substring方法用于从原字符串取出子字符串并返回，不改变原字符串。它与slice作用相同，但有一些奇怪的规则，因此不建议使用这个方法，优先使用slice。</p><p><b>substr()</b></p><p>也是从原字符串取出子字符串并返回，不改变原字符串。</p><p>如果两个参数：第一个参数表示开始位，第二个参数表示截取的子字符串的长度。</p><p>当只有一个参数时：则表示从开始位开始，截取到原字符串最后。</p><p>如果第一个参数是负数：表示倒数计算的字符位置</p><p>如果第二个参数是负数，将被自动转为0，因此会返回空字符串。</p><p><b>indexOf()，lastIndexOf()</b></p><p>用于确定一个字符串在另一个字符串中的位置，都返回一个整数，表示匹配开始的位置。如果返回-1，就表示不匹配。</p><p>indexOf从字符串头部开始匹配，lastIndexOf从尾部开始匹配。</p><p>它们还可以接受第二个参数，对于indexOf方法，第二个参数表示从该位置开始向后匹配；对于lastIndexOf，第二个参数表示从该位置起向前匹配。</p><p><b>trim()</b></p><p>用于去除字符串两端的空格，返回一个新字符串，不改变原字符串。</p><p><b>toLowerCase()，toUpperCase()</b></p><p>toLowerCase方法用于将一个字符串全部转为小写，</p><p>toUpperCase则是全部转为大写。</p><p>它们都返回一个新字符串，不改变原字符串。</p><p><b>localeCompare()</b></p><p>用于比较两个字符串，它返回如果小于0，表示第一个字符串小于第二个字符串；如果等于0，表示两者相等；如果大于0，表示第一个字符串大于第二个字符串。</p><p>该方法的最大特点，就是会考虑自然语言的顺序。如：大写的英文字母小于小写字母。</p><p>实际上这是因为JavaScript采用的是Unicode码点比较</p><p><b>match()</b></p><p>用于匹配原字符串是否有某个子字符串，返回一个数组，成员为匹配的第一个字符串。如果没有找到匹配，则返回null</p><p>返回的数组还有index属性和input属性，分别表示匹配字符串开始的位置和原始字符串。</p><p><b>search()</b></p><p>用法等同于match，表示查找字符串中是否有某个字符串。但是返回值为匹配的第一个位置。如果没有找到匹配，则返回-1。</p><p><b>replace()</b></p><p>用于替换匹配的子字符串，一般情况下只替换第一个匹配（除非使用带有g修饰符的正则表达式）</p><p><b>split()</b></p><p>按照给定分割字符串进行分割，返回一个由分割出来的子字符串组成的数组。</p><p>如果分割规则为空字符串，则返回数组的成员是原字符串的每一个字符。</p><p>如果省略参数，返回的数组的唯一成员就是原字符串。</p><p>如果满足分割规则的两个部分紧邻着（即中间没有其他字符），则返回数组之中会有一个空字符串。</p><p>如果满足分割规则的部分处于字符串的开头或结尾（即它的前面或后面没有其他字符），则返回数组的第一个或最后一个成员是一个空字符串。</p><p>split方法还可以接受第二个参数，表示返回数组的最大成员数量。</p><hr><h1><b>boolean对象</b></h1><p>所有对象对应的布尔值都是true，即通过new生成的boolean对象，对应的布尔值都是true</p><p>Boolean函数的类型转换</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-3e95483d4617bc07.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p><b>使用双重的！运算符，可以将任意值转为对应的布尔值。</b></p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-a3e5dc44be093ebb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

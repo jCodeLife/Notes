@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript数据类型</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">JavaScript数据类型</h1>
+        <div class="show-content">
+          <p>JavaScript 变量的数据类型</p><p>1.不可改变的原始值（栈数据）        </p><p><b>number、string、boolean、undefined、null</b></p><p>特点：</p><p>(1).占用空间固定，保存在栈中；</p><p>(2).保存和复制的是值本身；</p><p>(3).可使用typeof检测这些基本数据类型；</p><p>2.引用值（堆数据）</p><p><b>array、object、function</b></p><p>特点：</p><p>(1).占用空间不固定，数据保存在堆中；</p><p>(2).保存和复制的是指向对象的一个引用；</p><p>(3).可使用instanseof检测这些数据的类型；</p><hr><h1><b>number类型</b></h1><h4>1.进制</h4><p>number类型存在很多进制，除了常用的十进制，还有二级制、八进制、16机制等等；</p><h4>2.浮点数</h4><p>(1).小数点后至少有一位数字</p><p>(2).最高精度 17位小数（js可正常计算的范围是小数点前、后16位）</p><p>(3).缺陷：存在舍入误差，无法测试特定浮点数值</p><h4>3.数值范围</h4><p>(1)最小值</p><p>Number.MIN_VALUE</p><p>(2).最大值</p><p>Number.MAX_VALUE</p><p>(3).超出最大、最小值的范围</p><p>a.正无穷 </p><p>Infinity</p><p>Number.POSITIVE_INFINITY</p><p>b.负无穷</p><p>-Infinity</p><p>Number.NEGATIVE_INFINITY</p><p>c.缺陷：无法参与下一次计算</p><p>d.检测方法：isFinite()</p><h4>4.NaN</h4><p>Not a Number  非数值</p><p>特性：</p><p>1.任何涉及NaN的操作都将返回NaN</p><p>2. NaN不等于任何数，包括自身</p><p>检测：isNaN();</p><h4>5.Number数值转换问题</h4><p>将目标转换成数字</p><p><b>Number()</b></p><p>(1)Boolean</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-4b2f9065d4f2bf72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>(2)null</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-9b837efd6200991c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>(3)undefined</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-2d370cd3e586d798.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>(4)String</p><p>只包含数字的，转换成数字（十进制）</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-97968c95c2e7e332.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>只包含有效浮点格式，转换成浮点数字</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-8c93d7116c8efd9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>空字符串</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-e3115d292d1a0500.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>剩余其他格式的字符串都位NaN</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-4ee463589eee1bdf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>(5)数组</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-a5e3a465b4d382dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>(6)object</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-a9dc9497c3d22abe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><h4><b>6.parseInt</b></h4><p><b>转换成整型</b></p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-edebb28ec2684a2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p><b>特性</b></p><p>1.忽略前置空格</p><p>2.找到第一个非空格字符，若不是数字字符或者负号，则值就为NaN，若第一个非空格字符是数字符号，继续解析其后续字符，遇到非数字字符结束</p><p>3.小数点不是有效数字（不算数字字符，即遇到.也结束解析）</p><h4>7.parseFloat</h4><p>转换成浮点数</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-dbd7b4caf0dc9914.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>特点：</p><p>1.从第一个字符开始解析，遇到无效浮点格式后结束</p><p>2.只有第一个小数点有效，后面的小数点无效</p><p>3.没有小数点或者小数点后全是0的，直接转换为整数</p><hr><h4><b>string类型</b></h4><p><b>特性</b></p><p>1.由0个或多个16位Unicode字符组成</p><p>2.单引号和双引号不能交叉使用</p><p>3.使用length属性访问字符串长度</p><p>(1)转义序列表示一个字符</p><p>(2)无法精确返回双字节字符长度</p><p><b>转义序列</b></p><p>\n    换行</p><p>\t    制表符</p><p>\b    空格</p><p>\r    回车符</p><p>\f    分页符</p><p>\\    斜杠\</p><p>\'    单引号</p><p>\"    双引号</p><p>\xnn    十六进制数，n代表0-f</p><p>\unnnn    以十六进制代码表示一个Unicode字符</p><p><b>类型转换</b></p><p><b>toString()</b></p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-b390eabced0d69b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>
+
+数据类型是number  boolean string object的都可以使用toString方法</p><p>如果传入参数是数字，会将number类型的变量数字，变成对应的进制。即toString方法可以将10进制转成目标进制。相对应的，parseInt方法可以 以目标进制转成10进制。如 </p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-0c826a7fc96544b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>将num当成而进制，通过parseInt转成十进制，再通过toString转成其他进制。</p><p>小结：</p><p>parseInt是以目标进制位基底转成10进制</p><p>toString是以10进制位基底转成其他进制</p><p><b>String()</b></p><p>主要null和undefined</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-970326377e020285.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p><b>eval()</b></p><p>计算字符串表达式的值并以数值形式返回</p><p>eval("x=10;y=20;document.write(x*y)")</p><hr><h1>Boolean类型</h1><p>true为真，false为假</p><p>使用Boolean()进行转换，转换成false的值有：undefined、null、NaN、""、0</p><p>转换成true的有：任意非空字符串、非0数字、非空对象</p><hr><h1>
+<b>undefined</b><br>
+</h1><p>使用var声明但未初始化的变量</p><p>未声明的变量未初始化的变量通过typeof运算符均会返回undefined</p><hr><h1><b>null</b></h1><p>逻辑上null表示空对象的指针，使用typeof检测时会返回object</p><p><b>注：typeof会返回6种数据类型：number、string、boolean、undefined、object、function</b></p><p><b>特别的null表示空对象，所以返回的时object，数组返回的也是object</b></p><hr><p><b>object、</b><b>array、function</b></p><p>这里先记object的吧</p><h1>object</h1><p>定义：是一组数据或功能的集合</p><p>声明：var obj = new Object()    var obj2={}</p><p>属性和方法：</p><p><b>Constructor </b> 保存用来创建当前对象的函数</p><p><b>hasOwnProperty() </b>   检测给定的属性在当前对象实例中是否存在</p><p><b>isPrototypeOf() </b>   检测传入的对象是否是另一个对象的原型</p><p><b>propertyIsEnumerable()</b>    检测给定的属性是否能用for-in语句枚举</p><p><b>toString() </b>   返回对象的字符串表示</p><p><b>toLocalString()  </b>返回对象的字符串表示，改字符串与执行环境的地区对应</p><p><b>valueOf() </b>   返回对象的字符串、数字或者布尔值表示，通常与toString的值相同</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 日期对象 Date()</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">JavaScript 日期对象 Date()</h1>
+        <div class="show-content">
+          <p>Date 对象是 JavaScript 语言的一个内置数据类型。Date 对象用 <b>new Date()</b> 创建。</p><p>Date 对象一旦被创建，就可以使用许多方法来操作它。大多数方法只允许获取并设置对象的年、月、日、小时、分钟、秒、和毫秒字段，可以使用当地时间或世界标准时间（UTC，GMT）时间。</p><p>ECMAScript 标准要求的 Date 对象能够代表任何日期和时间，在1/1/1970之前或之后的 1 亿天内精确到毫秒。这是一个正负 273785 年的变化范围，所以 JavaScript 能够表示直到 275755 年的日期和时间。</p><hr><h1>创建日期对象</h1><p>有以下几种不同的形式：</p><p>new Date()  </p><p>不带参数，创建一个此时此刻的日期对象</p><p>  new Date(milliseconds)  </p><p>传递从1970年1月1日0点的毫秒数，根据传递的这个毫秒数来创建日期对象</p><p>new Date(datestring)   </p><p>传递一个字符串作为参数，这个字符串必须是一个日期形式（即可以被 Date.parse() 方法接收的格式），通过这个字符串来创建对象</p><p>new Date(year,month,date[,hour,minute,second,millisecond])</p><p> 方括号内的参数是可选的。根据给定的年月日 时分秒 毫秒来创建日期对象</p><hr><h1>Date 静态方法</h1><p>Date.parse()</p><p>返回 1970 年 1 月 1 日午夜到指定日期（字符串）的毫秒数</p><p>Date.UTC()</p><p>据世界时返回 1970 年 1 月 1 日 到指定日期的毫秒数</p><hr><h1>
+<b>Date方法核心方法</b><br>
+</h1><p>Date()     返回当下的日期和时间</p><p>getFullYear()</p><p>返回四位数年份</p><p>getMonth()</p><p>返回月份（1 ~ 11）</p><p>getDate()</p><p>返回一个月中的第几天（1 ~ 31）</p><p>getDay()</p><p>返回星期，一周中的第几天（0 ~ 6）</p><p>getHours()</p><p>返回小时 (0 ~ 23)</p><p>getMinutes()</p><p>返回分钟 (0 ~ 59)</p><p>getSeconds()</p><p>返回秒数 (0 ~ 59)</p><p>getMilliseconds()</p><p>返回毫秒(0 ~ 999)</p><p>getTime()</p><p>根据本地时返回 1970 年 1 月 1 日至今的毫秒数</p><p>*以上方法对应也有set方法</p><p>*都是根据当时new的本地时的Date对象返回的时间和日期。</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

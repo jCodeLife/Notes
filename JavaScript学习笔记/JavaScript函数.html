@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript函数</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">JavaScript函数</h1>
+        <div class="show-content">
+          <p>函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。</p><h1>定义函数</h1><h4>函数声明</h4><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-9f338bf810ff2b79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><h4><b>函数表达式</b></h4><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-ad4d909d27f1b6bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>充当了表达式，就不能充当一个正常的函数了。当等号右边有函数名时，会自动忽略</p><h4><b>通过new Function</b></h4><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-9ac062012513e21c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><hr><h1>调用函数</h1><h4>直接调用</h4><p>函数名（实参列表）</p><h4>在链接中调用</h4><p>&lt;a href="javascript:函数名()"&gt;&lt;/a&gt;</p><h4>在事件中调用</h4><p>事件类型="函数名()"</p><h4>递归调用</h4><p>在函数体内部调用函数本身</p><p>function 函数名aaa（）{//代码体；函数名aaa()}</p><hr><h1>方法</h1><p>函数刚刚出生的时候，就有一些东西了，包括一些方法。</p><p>call / apply </p><p>作用：改变this指向</p><p>区别：传参形式不同；在传参的第二部分，call需要把实参按照形参的个数传进去，apply需要传递一个数组arguments；</p><p>toString  返回函数的字符串表示</p><hr><h1>arguments对象</h1><p>功能：存放实参列表</p><p>特性：</p><p>1.在函数声明时自动初始化</p><p>2.仅在函数体内使用</p><p>3.带有下标属性，但并非真数组</p><p>属性：</p><p>1.length 获取函数实参列表长度</p><p>2.callee  返回当前执行的函数，即指向函数自身引用</p><p>3.caller 事实上，指向调用当前函数的函数；即是指向函数呼叫者</p><hr><h1>函数参数</h1><h4>参数类型</h4><p>1.形参：函数定义时使用的变量参数</p><p>2.实参：调用函数时传递给函数的实际参数</p><h4>特点</h4><p>1.参数个数没有限制：</p><p>    (1)当实参&lt;形参时，多余的形参==undefined</p><p>    (2)当实参&gt;形参时，多余的实参被忽略</p><p>2.参数的数据类型没有限制</p><p>3.通过arguments对象访问参数列表</p><p>4.参数始终按值传递：</p><p>    (1)基本数据类型，传值    </p><p>    (2)引用类型，传地址</p><hr><h1>指针标识</h1><h4>this </h4><p>指向当前操作对象</p><h4>callee</h4><p>指向参数集合所属函数</p><h4>prototype</h4><p>指向函数的原型对象</p><h4>constructor</h4><p>指向创建该对象的构造函数</p><p>    </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

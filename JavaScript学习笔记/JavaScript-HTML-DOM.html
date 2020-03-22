@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript HTML DOM</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">JavaScript HTML DOM</h1>
+        <div class="show-content">
+          <h1>什么是DOM</h1><p>DOM，英文是Document Object Model，中文名叫文档对象模型。</p><p>DOM定义了表示和修改文档所需的方法，这些方法可以用来更方便的操作html和xml以及间接的操作CSS。有人称DOM是html以及xml的标准编程接口。</p><p>通过 HTML DOM，可访问 JavaScript HTML 文档的所有元素。</p><p>当网页被加载时，浏览器会创建页面的文档对象模型。</p><hr><h1>DOM元素的增删改查</h1><h4>1.查找元素</h4><p><b>(1)通过document查找元素</b>（代表整个文档的对象）</p><p>通过ID获取：document.getElementById()    //IE8及以下不兼容</p><p>通过标签名：document.getElementsByTagName()    </p><p>通过标签中的name属性：document.getElementsByName()    //只有部分标签可生效，比如：表单、img、iframe</p><p>通过类名：document.getElementsByClassname()     //IE8及以下不兼容</p><p>通过CSS选择器：document.querySelector()和document.querySelectorAll();    //IE8以下不兼容，而且是非实时的。</p><p><b>(2)遍历节点树（兼容性都很好）</b></p><p>parentNode   //获取已知节点的父节点，最顶端为#document</p><p>childNodes    //获取子节点们</p><p>firstChild    //获取首个、第一个子节点</p><p>lastChild    //最后一个子节点</p><p>nextSibling    //下一个兄弟节点</p><p>previousSibling    //前一个、上一个兄弟节点</p><p><b>*节点们有一个常用的方法：</b></p><p>hasChildNodes(),判断节点下还有没有子节点，有返回true，没有返回false</p><p><b>*节点的4个属性</b></p><p>nodeName    节点名，返回以大写形式表示，只能读。</p><p>nodeValue    节点值，text节点或者comment节点的文本内容，即部分节点才有。可读可写。</p><p>nodeType    节点类型，只能读</p><p>attribute    元素节点的属性集合</p><p><b>*节点类型</b></p><p>节点有6种类型，对应有6个值，即每个值对应一个类型</p><p>元素节点：1</p><p>属性节点：2</p><p>文本节点：3</p><p>注释节点：8</p><p>document：9</p><p>DocumentFragment：11</p><p><b>(3)基于当前元素节点的遍历</b></p><p>parentElement    //当前元素的父元素节点，注IE8及以下不兼容；</p><p><b>children    //当前元素的子元素节点，都兼容了；</b></p><p>firstElementChild    //第一个子元素节点，IE8及以下不兼容；</p><p>lastElementChild    //最后一个子元素节点，IE8及以下不兼容；</p><p>nextElementSibling    //下一个兄弟元素节点，IE8及以下不兼容；</p><p>previousElementSibling    //前一个兄弟元素节点，IE8及以下不兼容；</p><h1>2.新增</h1><p><b>创建节点</b></p><p>document.createElement()    //创建元素节点</p><p>document.createTextNode()    //创建文本节点</p><p>document.createComment()    //创建注释节点</p><p>document.createDocumentFragment()</p><p>document.createAttribute()    //创建属性节点</p><p><b>插入节点</b></p><p>appendChild()</p><p>向节点的子节点列表的末尾添加新的子节点</p><p>insertBefore(a,b)</p><p>第一个参数表示：要添加的新节点</p><p>第二个参数表示：已知子节点</p><p>insert a before b，即插入要添加的新节点a在已知节点b前面。</p><p><b>删除节点</b></p><p>removeChild();</p><p>移除指定的子节点,相当于剪切出去。</p><p>remove()</p><p>移除，相当于销毁整个节点</p><p><b>替换节点</b></p><p>parent.<b>replaceChild</b>(new,origin)</p><p>将某一个子节点替换为另一个，</p><p>第一个参数：要插入的新元素</p><p>第二个：将要被替换的老元素</p><p><b>复制节点</b></p><p>cloneNode(true/false)</p><p>当参数为true：复制当天节点及其所以子节点</p><p>当参数为false：仅复制当天节点，不复制子节点。</p><h4><b>元素节点的常用属性和方法</b></h4><p>属性</p><p><b>innerHTML </b></p><p>能获取或设置元素节点里面的HTML内容</p><p><b>innerText    </b></p><p>能获取或设置元素节点里面的文本值，火狐不兼容，</p><p>火狐用<b>textContent</b>，但是textContent老版的IE不好使。</p><p>方法：</p><p><b>getAttribute(属性名)</b></p><p>获取指定属性名对应的属性</p><p><b>setAttribute(属性名，属性值)</b></p><p>创建或者改变元素节点对应的属性</p><p><b>removeAttribute(属性名)</b></p><p>删除元素中指定属性</p><h4><b>文本节点相关操作</b></h4><p>insertData(offset,string)</p><p>从offset指定的位置插入string</p><p>appendData(string)</p><p>将string追加到文本节点的末尾处</p><p>deleteData(offset,count)</p><p>从offset位置开始删除count个字符</p><p>replaceData(off,count,string)</p><p>从off开始将count个字符用string替代</p><p>splitData(offset)</p><p>从offset位置开始将文本节点分成两个节点</p><p>subString(offset,count)</p><p>返回offset位置开始的count个节点</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

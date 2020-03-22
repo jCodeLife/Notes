@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript流程语句</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">JavaScript流程语句</h1>
+        <div class="show-content">
+          <h1>循环语句</h1><h4>while循环</h4><p>语法</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-c463185c10c7b468.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>流程：</p><p>1.判断条件表达式的值</p><p>2.当值为true时，循环执行代码段</p><p>3.当值为false时，退出循环体</p><p>特性：先判断再执行，若条件不满足则循环一次也不执行</p><p>适用情景：一个动作被重复执行到满足某个条件时使用while循环</p><h4>do-while</h4><p>语法</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-2c1d5577c5dd6feb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>流程：</p><p>1.先执行循环体内代码再进行判断，</p><p>2.如果表达式的值为true时，则重复执行代码段</p><p>3.如果表达式的值为false时，则退出循环体</p><p>特性：先执行在判断，循环体内代码至少会被执行一次</p><p>适用情景：希望一个动作至少被执行一次时</p><h4>for循环</h4><p>语法</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-fad5c0298a3d0732.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>流程：</p><p><br></p><p><b>语法</b></p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-2502cef2a1c576c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>作用：枚举对象属性</p><p>注意事项：</p><p>1.循环属性的顺序不可预知</p><p>2.对象的值不能是null或undefined</p><p><br></p><hr><h1>跳出语句</h1><h4>return</h4><p>终止循环体的运行，并返回一个值</p><h4><b>break</b></h4><p>终止整个循环，不再进行判断。</p><h4>continue</h4><p>终止本次循环，接着去判断是否执行下次循环</p><p><br></p><hr><h1>选择语句（条件循环）</h1><h4>if   if-else  if-elseif-else</h4><p>语法：</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-300e712d62021f38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>流程：</p><p>1.判断条件1，如果返回true，则执行代码1</p><p>2.如果条件1的返回值是false，则跳过语句1并接着判断条件2，如果条件2为true的话执行代码2</p><p>3.如果所以表达式的值都为false，则执行else后面的语句，表示除了上述情况的剩余其他情况。执行完结束循环。</p><p>特性：</p><p>1.结构复杂，可嵌套</p><p>2.可检测多个条件表达式</p><p>3.表达式的值具有线性特征</p><p>4.表达式的值是动态的</p><p>5.适用于任意类型的数据</p><p>6.可处理复杂的逻辑关系</p><h4>switch</h4><p>语法：</p><div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-16aa39af681914bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>流程：</p><p>1.计算表达式的值，与各标签比较；</p><p>2.若找到与之相匹配的标签，则执行其后面的代码段，然后退出语句</p><p>3.若没有找到相匹配的标签，则执行default之后的代码。</p><p>格式：</p><p>1.case 标签为常量，可以是数字或者字符串</p><p>2.每个标签均以冒号：结束</p><p>3.虽然break与default为可选项，但为了逻辑清楚最好不要省略</p><p>4.case的值必须与条件表达式的值完全匹配</p><p>特点：</p><p>1.结构简洁，专为多重选择设计</p><p>2.表达式的值具有离散型</p><p>3.表达式的值是固定的，不会动态变化</p><p>4.仅能应用整数、枚举、字符串等数据类型</p><p>5.仅能处理多个枚举型逻辑关系</p><hr><h1>异常处理语句<br>
+</h1><h4>throw    </h4><p>主动抛出异常</p><h4>try    </h4><p>指明需要处理的代码段</p><h4>catch    </h4><p>捕获异常</p><h4>finally    </h4><p>后期处理</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

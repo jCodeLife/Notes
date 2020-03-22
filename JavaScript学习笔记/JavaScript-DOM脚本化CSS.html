@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM脚本化CSS</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">JavaScript DOM脚本化CSS</h1>
+        <div class="show-content">
+          <p>可以通过DOM元素来控制其CSS样式，即可读写其中的样式</p><hr><h1>读写CSS属性</h1><p>格式</p><p><b>dom.style.prop</b></p><p>规则：</p><p>1.通过dom.style.prop可以读写行间样式，没有兼容性问题，碰到float这样的系统保留字属性，前面应加css；如float--&gt;cssFloat;</p><p>2.符合属性建议拆解；</p><p>3.组合单词变成小驼峰式；</p><p>4.写入的值必须是字符串格式；</p><p>*其实，style属性普遍存在于dom元素中，是个dom元素就有style属性，其对应的是CSSStyleDeclaration对象，这个样式声明对象能将这个dom元素所有能用的属性都列出来，巧了，这刚好能改变CSS样式。</p><hr><h1>查询计算样式</h1><p>通过计算样式，可以获得当前元素所展示的一切CSS的显示值</p><p><b>1.window.getComputedStyle(ele,null)</b></p><p>(1)计算样式只读；</p><p>(2)返回的计算样式的值都是绝对值，没有像em、n%的相对单位</p><p>(3)IE8及以下不兼容；</p><p><b>2.ele.currentStyle()</b></p><p>(1)计算样式只读；</p><p>(2)返回的计算样式的值不是经过转换的绝对值；</p><p>(3)IE独有的</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

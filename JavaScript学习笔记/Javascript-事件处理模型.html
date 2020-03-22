@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 事件处理模型</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">Javascript 事件处理模型</h1>
+        <div class="show-content">
+          <h1>1.事件对象</h1><p>e = event || window.event</p><p>*window.event  针对IE</p><p>*event是浏览器把当下触发事件的元素打包好的一个对象，放在处理函数的参数中。</p><hr><h1>2.事件源对象</h1><p>target = e.target || e.srcElement</p><p>*事件源对象是事件对象的一个属性，这个属性标记和记录了事件的真正源头。</p><p>*target属性IE没有，srcElement真对IE。chrome两个都有，火狐没有srcElement</p><hr><h1>3.事件处理模型</h1><p>（1）事件冒泡(bubble)</p><p>结构上(非视觉上)嵌套关系的元素，存在事件冒泡功能，即同一事件，自子元素冒泡向父元素（自底向上）</p><p>（2）事件捕获</p><p>结构上(非视觉上)嵌套关系的元素，存在事件捕获功能，即同一事件，自父元素冒泡向子元素（自顶向下）。注：IE没有事件捕获功能。Chrome以及最新的Firefox和最新的operay有事件捕获。</p><p>注意：</p><p>a.一个对象的一个事件类型，所绑定的一个处理函数，只能存在一个事件模型，要么捕获，要么冒泡。</p><p>b.触发顺序：</p><p>如果一个对象的一个事件类型，绑定了两个处理函数，一个冒泡一个捕获，那么他们的触发顺序是：先捕获，后冒泡。</p><p>c.冒泡变成捕获的方法：</p><p>ele.addEventListener("事件类型"，处理函数fn，true)；</p><p>从false改成false的时候，这个事件的处理函数立即变成里事件捕获。</p><p>d.focus、blur、change、submit、reset、select等事件不存来冒泡功能。</p><hr><h1>事件委托机制</h1><p>利用事件冒泡和事件源对象进行事件委托：</p><p>优点：</p><p>性能好，不需要循环所有元素一个个绑定事件。</p><p>灵活，当有新的子元素时，不需要重新绑定事件。</p><hr><h1>取消冒泡和阻止默认事件</h1><p>1.取消冒泡</p><p>（1）w3c标准 <b>event.stopPropagation();</b>不支持IE8及以下</p><p>（2）IE独有的：event.cancelBubble = true；后面Chrome也实现了。</p><p>2.阻止默认事件</p><p>默认事件，比如：表单提交、a标签跳转、右键出菜单等</p><p>（1）return false；以对象属性的方式注册的事件才生效（句柄）</p><p>（2）event.preventDefault()；w3c标准，IE8及以下不兼容</p><p>（3）event.returnValue = false；//IE使用。</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

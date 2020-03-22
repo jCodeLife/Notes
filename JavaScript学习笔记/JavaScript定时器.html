@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript定时器</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">JavaScript定时器</h1>
+        <div class="show-content">
+          <p>定时器，又叫计时事件，在一个设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。</p><p>js中有两个定时器方法:<b>setInterval()和setTimeout()</b></p><p>清除定时器的方法对应是：<b>clearInterval()和clearTimeout()</b></p><p>*以上方法都是定义在window上的方法，可以不使用window前缀。</p><hr><h1>setInterval()</h1><p>setInterval叫定时器还不怎么标准，应该叫做定时循环器，在间隔指定的毫秒数不停地执行指定的代码</p><p>第一个参数是：函数（function）</p><p>第二个参数是：间隔的毫秒数</p><h1><b>clearInterval()</b></h1><p>使用 clearInterval() ，清除setInterval定时循环器，传递的参数是定时器设置是的全局变量名称。</p><hr><h1>setTimeout()<br>
+</h1><p>setTimeout定时器，间隔指定毫秒数执行指定代码，只执行一次。</p><p>第一个参数是：函数（function）</p><p>第二个参数是：毫秒数</p><h1><b>clearTimeout()</b></h1><p>用 clearTimeout() ，清除setTimeout()定时器，传递的参数是定时器设置时的全局变量名称。</p><hr><p>注意：</p><p>1.若在创建定时器时没有名字，则定时器无法清除；</p><p>2.因为是全局对象window的方法，内部函数this指向的window；</p><p>3.setInterval里面传递的毫秒数只会在第一次的时候识别，之后不能改了。</p><p>*另外注意：setTimeout, setInterval是异步任务</p><hr>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

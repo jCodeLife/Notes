@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript BOM相关操作</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">JavaScript BOM相关操作</h1>
+        <div class="show-content">
+          <div class="image-package  " data-index="null">
+              <img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/17785871-408cfa14bf697275.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="min-height:null;min-width:null;" width="null" height="null">
+              <br>
+            <div class="image-caption"></div>
+</div><p>window：表示浏览器窗口</p><p>所有JavaScript全局对象、函数和变量都是window的成员，甚至HTMLDOM也是。</p><h4><b>查看元素尺寸</b></h4><p>dom.offsetWidth  /  dom.offsetHeight</p><h4>查看元素位置</h4><p>dom.offsetLeft    /  dom.offsetTop</p><p>若是无定位元素，返回的是相对于文档的坐标</p><p>若是有定位元素，返回的是相对于最近有定位的父级元素的坐标</p><h4>查看最近有定位的父级</h4><p>dom.offsetParent</p><p>返回最近有定位的父级，若无，则返回body；</p><p>body的offsetParent返回null；</p><h4>查看元素的几何尺寸</h4><p>dom.getBoundingClientRect();</p><p>兼容性很好；</p><p>该方法返回一个对象，对象里面有left、right、top、bottom和width、height。</p><p>注意点：返回的结果并不是实时的。</p><h4><b>窗口的大小和位置</b></h4><p>1.完整窗口大小</p><p>    window.outerHeight  /  window.outWidth</p><p>2.文档显示区大小(视口大小)</p><p>    window.innerHeight  / window.innerWidth </p><p>    注：IE8及以下不兼容</p><p>            包括了滚动条宽度</p><p>    document.documentElement.clientHeight  /  document.documentElement.clientWidth;标准模式下，任意浏览器都兼容。不包括滚动条宽度</p><p>    document.body.clientHeight   //  document.body.clientWidth;适用于怪异模式下的浏览器。</p><h4>调整窗口大小：</h4><p>1.打开窗口的时候</p><p>    window.open("url","name",config);</p><p>    config的格式 如：var config = "left=50,top=50,width=100,height=100"；</p><p>    config中所有都是文档显示区的宽高和位置</p><p>2.在打开窗口之后</p><p>    window.resizeTo(width,heigh);    调整当天窗口的尺寸</p><p>    window.resizeBy(宽的增量，高的增量)</p><p>*两个方法在新版的浏览器中废除了。</p><p>除了窗口打开，对应有关闭窗口的方法</p><p>window.close()    关闭当天窗口</p><h4>窗口的定位：</h4><p>    left: screenX/screenLeft;</p><p>    top: screenY/screenTop;</p><h4>移动窗口的位置：</h4><p>    window.moveTo(x,y)    移动当前窗口</p><p>    window.moveBy(x的增量，y的增量)    </p><p>可用的屏幕宽度和高度</p><p>1.完整的分辨率：screen.width / screen.height</p><p>2.去掉任务栏的可用宽和高（减去界面特性，如任务栏）：screen.availWith / screen.availHeight</p><h4>让滚动条滚动</h4><p>window上有三个方法</p><p>scroll(x,y)</p><p>scrollTo(x,y)</p><p>scrollBy(x,y)</p><p>三个方法类似，传入x，y坐标，实现让滚动条滚动。</p><p>前面个两个方法基本一样，而scrollBy()会在之前的数据基础上做累加。可以利用scrollBy实现快速阅读的功能。</p><h4>查看滚动条的滚动距离</h4><p>window.pageXOffset    /    window.pageYOffset    注：IE8及以下不兼容</p><p>document.body.scrollLeft    /    document.body.scrollTop</p><p>document.documentElement.scrollLeft    /    document.documentElement.scrollTop</p><p>上面两组方法因为兼容性比较紊乱，采取的方法是两种方法相加，因为不可能两个同时有值。</p><hr><h4>window.location</h4><p>位置对象</p><p>用于获取页面的url地址</p><p>location.href    返回当前页面的整个URL</p><p>location.protocol    返回web协议（http://或者https://）</p><p>location.hostname    返回web主机的域名</p><p>location.port    返回端口号</p><p>location.pathname    返回路径和文件名。</p><p>location.assign()方法，加载新的文档</p><hr><h4>window.history对象</h4><p>包含浏览器历史</p><p>history.back();</p><p>history.forword();</p><p>分别对应加载历史列表中的后一个和前一个URL。</p><hr><h4>消息框</h4><p>JS中创建了3中消息框：</p><p>1.警告框</p><p>alert(“文本”);</p><p>2.确认框</p><p>confirm("文本")</p><p>使用户可以验证或者接受某些消息。确定返回true，否则false</p><p>3.提示框</p><p>prompt("文本","默认值")</p><p>如果用户点击确定，那么返回值为输入的值。取消则返回null</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
